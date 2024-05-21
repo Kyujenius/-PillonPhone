@@ -1,7 +1,7 @@
 ---
-name: "[ \bServer Bug ] - Bug report"
+name: "[ Bug ] - Bug report"
 about: "❗ Bug Template"
-title: "[ Server Bug ] - "
+title: "[ Bug ] - "
 labels: bug ❗
 assignees: ''
 

@@ -1,7 +1,7 @@
 ---
-name: "[ Server Feature ] - Feature request"
+name: "[ Feature ] - Feature request"
 about: "✨ Feature Template "
-title: "[ Server Feature ] - "
+title: "[ Feature ] - "
 labels: feature ✨
 assignees: ''
 

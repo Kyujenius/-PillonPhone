@@ -1,7 +1,7 @@
 ---
-name: "[ Server Refactor ] - Refactoring request"
+name: "[ Refactor ] - Refactoring request"
 about: "\U0001F3A8 Refactor Template"
-title: "[ Server Refactor ] - "
+title: "[ Refactor ] - "
 labels: "refactor \U0001F3A8"
 assignees: ''
 
