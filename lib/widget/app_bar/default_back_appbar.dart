@@ -39,7 +39,7 @@ class DefaultBackAppBar extends StatelessWidget {
           ),
         ),
         icon: SvgPicture.asset(
-          "assets/icons/icon_chevron_left.svg",
+          "assets/icons/chevron_left.svg",
           width: 24,
           height: 24,
         ),

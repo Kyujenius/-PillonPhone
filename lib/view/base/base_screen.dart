@@ -82,28 +82,36 @@ abstract class BaseScreen<T extends GetxController> extends GetView<T> {
   Color? get screenBackgroundColor => Colors.transparent;
 
   /// Scaffold 외부를 SafeArea로 감싸는지 여부를 정의하는 메서드
+  ///
+  /// 기본값은 false이며, 하위 클래스에서 오버라이드하여 true로 설정할 수 있음
+  ///
+  /// 이때 SafeArea의 top과 bottom을 설정할지 여부는 [setTopOuterSafeArea]와 [setBottomOuterSafeArea] 메서드를 통해 정의
   @protected
   bool get wrapWithOuterSafeArea => false;
 
   /// 외부 SafeArea의 위쪽 부분을 설정할지 여부를 정의하는 메서드
   @protected
-  bool get setTopOuterSafeArea => true;
+  bool get setTopOuterSafeArea => throw UnimplementedError();
 
   /// 외부 SafeArea의 아래쪽 부분을 설정할지 여부를 정의하는 메서드
   @protected
-  bool get setBottomOuterSafeArea => true;
+  bool get setBottomOuterSafeArea => throw UnimplementedError();
 
   /// Scaffold Body를 SafeArea로 감싸는지 여부를 정의하는 메서드
+  ///
+  /// 기본값은 false이며, 하위 클래스에서 오버라이드하여 true로 설정할 수 있음
+  ///
+  /// 이때 SafeArea의 top과 bottom을 설정할지 여부는 [setTopInnerSafeArea]와 [setBottomInnerSafeArea] 메서드를 통해 정의
   @protected
   bool get wrapWithInnerSafeArea => false;
 
   /// 내부 SafeArea의 위쪽 부분을 설정할지 여부를 정의하는 메서드
   @protected
-  bool get setTopInnerSafeArea => true;
+  bool get setTopInnerSafeArea => throw UnimplementedError();
 
   /// 내부 SafeArea의 아래쪽 부분을 설정할지 여부를 정의하는 메서드
   @protected
-  bool get setBottomInnerSafeArea => true;
+  bool get setBottomInnerSafeArea => throw UnimplementedError();
 
   /// AppBar를 구성하는 메서드
   @protected

@@ -47,7 +47,7 @@ abstract class ColorSystem {
   );
   static const int _secondaryValue = 0xFF8490BC;
 
-  /// Green Color
+  /// Error Color
   static const MaterialColor error = MaterialColor(
     _errorValue,
     <int, Color>{
@@ -65,7 +65,7 @@ abstract class ColorSystem {
   );
   static const int _errorValue = 0xFFE24A4A;
 
-  /// Pink Color
+  /// Neutral Color
   static MaterialColor neutral = const MaterialColor(
     _neutralValue,
     <int, Color>{
