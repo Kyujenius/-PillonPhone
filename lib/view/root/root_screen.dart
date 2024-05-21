@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:pill_on_phone/config/color_system.dart';
-import 'package:pill_on_phone/config/font_system.dart';
+import 'package:get/get.dart';
 import 'package:pill_on_phone/view/base/base_screen.dart';
+import 'package:pill_on_phone/view/chatting/chatting_screen.dart';
+import 'package:pill_on_phone/view/pharmacy/pharmacy_screen.dart';
 import 'package:pill_on_phone/view/root/widget/custom_bottom_navigation_bar.dart';
+import 'package:pill_on_phone/view/see_more/see_more_screen.dart';
 import 'package:pill_on_phone/view_model/root/root_view_model.dart';
 
 class RootScreen extends BaseScreen<RootViewModel> {
@@ -15,21 +17,20 @@ class RootScreen extends BaseScreen<RootViewModel> {
   bool get setTopInnerSafeArea => true;
 
   @override
-  bool get setBottomInnerSafeArea => true;
+  bool get setBottomInnerSafeArea => false;
 
   @override
-  Color? get screenBackgroundColor => ColorSystem.error.shade200;
+  bool get extendBodyBehindAppBar => true;
 
   @override
   Widget buildBody(BuildContext context) {
-    return const Center(
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Text(
-            'Root Screen',
-            style: FontSystem.H3,
-          ),
+    return Obx(
+      () => IndexedStack(
+        index: viewModel.selectedIndex,
+        children: const [
+          PharmacyScreen(),
+          ChattingScreen(),
+          SeeMoreScreen(),
         ],
       ),
     );
