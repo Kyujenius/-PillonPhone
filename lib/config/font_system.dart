@@ -2,13 +2,14 @@
 
 import 'package:flutter/material.dart';
 import 'package:pill_on_phone/config/app_config.dart';
+import 'package:pill_on_phone/config/color_system.dart';
 
 abstract class FontSystem {
   static const TextStyle H1 = TextStyle(
     fontSize: 24,
     fontWeight: FontWeight.w700,
     fontFamily: AppConfig.APP_FONT_STYLE,
-    color: Colors.black,
+    color: ColorSystem.black,
     height: 1.5,
   );
 
@@ -16,7 +17,7 @@ abstract class FontSystem {
     fontSize: 20,
     fontWeight: FontWeight.w700,
     fontFamily: AppConfig.APP_FONT_STYLE,
-    color: Colors.black,
+    color: ColorSystem.black,
     height: 1.5,
   );
 
@@ -24,7 +25,7 @@ abstract class FontSystem {
     fontSize: 18,
     fontWeight: FontWeight.w700,
     fontFamily: AppConfig.APP_FONT_STYLE,
-    color: Colors.black,
+    color: ColorSystem.black,
     height: 1.444,
   );
 
@@ -32,7 +33,7 @@ abstract class FontSystem {
     fontSize: 16,
     fontWeight: FontWeight.w700,
     fontFamily: AppConfig.APP_FONT_STYLE,
-    color: Colors.black,
+    color: ColorSystem.black,
     height: 1.75,
   );
 
@@ -40,7 +41,7 @@ abstract class FontSystem {
     fontSize: 16,
     fontWeight: FontWeight.w500,
     fontFamily: AppConfig.APP_FONT_STYLE,
-    color: Colors.black,
+    color: ColorSystem.black,
     height: 1.75,
   );
 
@@ -48,7 +49,7 @@ abstract class FontSystem {
     fontSize: 14,
     fontWeight: FontWeight.w700,
     fontFamily: AppConfig.APP_FONT_STYLE,
-    color: Colors.black,
+    color: ColorSystem.black,
     height: 1.714,
   );
 
@@ -56,7 +57,7 @@ abstract class FontSystem {
     fontSize: 14,
     fontWeight: FontWeight.w500,
     fontFamily: AppConfig.APP_FONT_STYLE,
-    color: Colors.black,
+    color: ColorSystem.black,
     height: 1.714,
   );
 
@@ -64,7 +65,7 @@ abstract class FontSystem {
     fontSize: 12,
     fontWeight: FontWeight.w500,
     fontFamily: AppConfig.APP_FONT_STYLE,
-    color: Colors.black,
+    color: ColorSystem.black,
     height: 1.667,
   );
 }
