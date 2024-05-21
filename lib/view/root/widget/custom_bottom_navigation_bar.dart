@@ -3,15 +3,14 @@ import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 import 'package:pill_on_phone/config/color_system.dart';
 import 'package:pill_on_phone/config/font_system.dart';
+import 'package:pill_on_phone/view/base/base_widget.dart';
 import 'package:pill_on_phone/view_model/root/root_view_model.dart';
 
-class CustomBottomNavigationBar extends GetView<RootViewModel> {
+class CustomBottomNavigationBar extends BaseWidget<RootViewModel> {
   const CustomBottomNavigationBar({super.key});
 
   @override
-  Widget build(BuildContext context) {
-    final viewModel = Get.find<RootViewModel>();
-
+  Widget buildView(BuildContext context) {
     return Obx(
       () => Theme(
         data: ThemeData(
@@ -65,7 +64,8 @@ class CustomBottomNavigationBar extends GetView<RootViewModel> {
               // Items
               items: [
                 BottomNavigationBarItem(
-                    icon: Icon(
+                    icon: icon(
+                      context: context,
                       iconPath: 'assets/icons/pharmacy.svg',
                       color: viewModel.selectedIndex == 0
                           ? ColorSystem.neutral.shade500
@@ -75,7 +75,8 @@ class CustomBottomNavigationBar extends GetView<RootViewModel> {
                     ),
                     label: "약국"),
                 BottomNavigationBarItem(
-                    icon: Icon(
+                    icon: icon(
+                      context: context,
                       iconPath: 'assets/icons/chatting.svg',
                       color: viewModel.selectedIndex == 1
                           ? ColorSystem.neutral.shade500
@@ -85,7 +86,8 @@ class CustomBottomNavigationBar extends GetView<RootViewModel> {
                     ),
                     label: "대화"),
                 BottomNavigationBarItem(
-                    icon: Icon(
+                    icon: icon(
+                      context: context,
                       iconPath: 'assets/icons/see_more.svg',
                       color: viewModel.selectedIndex == 2
                           ? ColorSystem.neutral.shade500
@@ -101,46 +103,35 @@ class CustomBottomNavigationBar extends GetView<RootViewModel> {
       ),
     );
   }
-}
 
-class Icon extends StatelessWidget {
-  const Icon({
-    super.key,
-    required this.iconPath,
-    required this.color,
-    required this.height,
-    this.bottomPadding = 0,
-  });
+  Widget icon({
+    required BuildContext context,
+    required String iconPath,
+    required Color color,
+    required double height,
+    double bottomPadding = 0,
+  }) =>
+      SizedBox(
+        height: height + bottomPadding,
+        child: Column(
+          children: [
+            FutureBuilder<String>(
+              future: DefaultAssetBundle.of(context).loadString(iconPath),
+              builder: (context, snapshot) {
+                String data = snapshot.data ??
+                    "<svg version=\"1.1\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 1 1\"></svg>";
 
-  final String iconPath;
-  final Color color;
-  final double height;
-  final double bottomPadding;
-
-  @override
-  Widget build(BuildContext context) {
-    return SizedBox(
-      height: height + bottomPadding,
-      child: Column(
-        children: [
-          FutureBuilder<String>(
-            future: DefaultAssetBundle.of(context).loadString(iconPath),
-            builder: (context, snapshot) {
-              String data = snapshot.data ??
-                  "<svg version=\"1.1\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 1 1\"></svg>";
-
-              return SvgPicture.string(
-                data.replaceAll(
-                  "#000000",
-                  '#${color.value.toRadixString(16).substring(2).padLeft(6, '0').toUpperCase()}',
-                ),
-                height: height,
-              );
-            },
-          ),
-          if (bottomPadding != 0) SizedBox(height: bottomPadding),
-        ],
-      ),
-    );
-  }
+                return SvgPicture.string(
+                  data.replaceAll(
+                    "#000000",
+                    '#${color.value.toRadixString(16).substring(2).padLeft(6, '0').toUpperCase()}',
+                  ),
+                  height: height,
+                );
+              },
+            ),
+            if (bottomPadding != 0) SizedBox(height: bottomPadding),
+          ],
+        ),
+      );
 }
