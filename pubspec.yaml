@@ -1,0 +1,76 @@
+name: pill_on_phone
+description: "Pill On Phone"
+
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.3.4 <4.0.0'
+
+dependencies:
+  #Default
+  flutter:
+    sdk: flutter
+  flutter_localizations:
+    sdk: flutter
+  collection: any
+
+  # Icons
+  cupertino_icons: ^1.0.6
+
+  # Splash Screen
+  flutter_native_splash: ^2.4.0
+
+  # Dotenv
+  flutter_dotenv: ^5.1.0
+
+  # Localization And Logger
+  intl: ^0.18.1
+  logger: ^2.1.0
+
+  # GetX
+  get: ^4.6.6
+
+  # Svg
+  flutter_svg: ^2.0.10+1
+
+dev_dependencies:
+  # Default
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^3.0.1
+
+  # Localization
+  intl_translation: ^0.18.1
+
+  # app icon
+  flutter_launcher_icons: ^0.13.1
+
+flutter:
+  uses-material-design: true
+
+  assets:
+    - assets/images/
+    - assets/icons/
+  #    - assets/config/.env
+
+  fonts:
+    - family: SUIT
+      fonts:
+        - asset: assets/fonts/SUIT-Thin.otf
+          weight: 100
+        - asset: assets/fonts/SUIT-ExtraLight.otf
+          weight: 200
+        - asset: assets/fonts/SUIT-Light.otf
+          weight: 300
+        - asset: assets/fonts/SUIT-Regular.otf
+          weight: 400
+        - asset: assets/fonts/SUIT-Medium.otf
+          weight: 500
+        - asset: assets/fonts/SUIT-SemiBold.otf
+          weight: 600
+        - asset: assets/fonts/SUIT-Bold.otf
+          weight: 700
+        - asset: assets/fonts/SUIT-ExtraBold.otf
+          weight: 800
+        - asset: assets/fonts/SUIT-Heavy.otf
+          weight: 900
