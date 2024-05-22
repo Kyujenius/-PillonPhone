@@ -24,7 +24,7 @@ dependencies:
   flutter_dotenv: ^5.1.0
 
   # Localization And Logger
-  intl: ^0.18.1
+  intl: ^0.19.0
   logger: ^2.1.0
 
   # GetX
@@ -32,15 +32,16 @@ dependencies:
 
   # Svg
   flutter_svg: ^2.0.10+1
+  dio: ^5.4.3+1
 
 dev_dependencies:
   # Default
   flutter_test:
     sdk: flutter
-  flutter_lints: ^3.0.1
+  flutter_lints: ^4.0.0
 
   # Localization
-  intl_translation: ^0.18.1
+  intl_translation: ^0.20.0
 
   # app icon
   flutter_launcher_icons: ^0.13.1
