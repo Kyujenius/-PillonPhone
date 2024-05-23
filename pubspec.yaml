@@ -24,7 +24,7 @@ dependencies:
   flutter_dotenv: ^5.1.0
 
   # Localization And Logger
-  intl: ^0.19.0
+  intl: ^0.18.1
   logger: ^2.1.0
 
   # GetX
