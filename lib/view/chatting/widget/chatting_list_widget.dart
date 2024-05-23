@@ -19,69 +19,69 @@ class ChatListItem extends StatelessWidget {
         child: Row(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            ClipRRect(
-              borderRadius: BorderRadius.circular(8.0),
-              child: Container(
-                width: 88,
-                height: 88,
-                decoration: BoxDecoration(
-                  image: DecorationImage(
-                    image: NetworkImage(chatItem.pharmacyImage ?? ''),
-                    fit: BoxFit.cover,
-                  ),
-                ),
-              ),
-            ),
+            pharmacyImage(),
             const SizedBox(width: 16),
-
-
-            Expanded(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    chatItem.pharmacyName ?? '약국 이름',
-                    style: FontSystem.H3,
-                  ),
-                  const SizedBox(height: 4),
-
-                  Text(
-                    chatItem.lastMessage,
-                    style: FontSystem.Sub2,
-                    overflow: TextOverflow.ellipsis,
-                    //넘쳤을 때 체크
-                  ),
-                ],
-              ),
-            ),
-
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.end,
-              children: [
-                Text(
-                  chatItem.lastMessageTime,
-                  style: FontSystem.Sub2.copyWith(
-                    color: ColorSystem.neutral
-                  ),
-                ),
-                const SizedBox(height: 4),
-                if (chatItem.messageCount > 0)
-                  Container(
-                    padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
-                    decoration: BoxDecoration(
-                      color: ColorSystem.primary.shade500,
-                      borderRadius: BorderRadius.circular(15),
-                    ),
-                    child: Text(
-                      '${chatItem.messageCount}+',
-                      style: FontSystem.Sub1,
-                    ),
-                  ),
-              ],
-            ),
+            pharmacyNameNLastMessage(),
+            pharmacyLastMessageTimeNMessageCount(),
           ],
         ),
       ),
     );
   }
+
+  Widget pharmacyImage() => ClipRRect(
+        borderRadius: BorderRadius.circular(8.0),
+        child: Container(
+          width: 88,
+          height: 88,
+          decoration: BoxDecoration(
+            image: DecorationImage(
+              image: NetworkImage(chatItem.pharmacyImage ?? ''),
+              fit: BoxFit.cover,
+            ),
+          ),
+        ),
+      );
+
+  Widget pharmacyNameNLastMessage() => Expanded(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(
+              chatItem.pharmacyName ?? '약국 이름',
+              style: FontSystem.H3,
+            ),
+            const SizedBox(height: 4),
+            Text(
+              chatItem.lastMessage,
+              style: FontSystem.Sub2,
+              overflow: TextOverflow.ellipsis,
+              //넘쳤을 때 체크
+            ),
+          ],
+        ),
+      );
+
+  Widget pharmacyLastMessageTimeNMessageCount() => Column(
+        crossAxisAlignment: CrossAxisAlignment.end,
+        children: [
+          Text(
+            chatItem.lastMessageTime,
+            style: FontSystem.Sub2.copyWith(color: ColorSystem.neutral),
+          ),
+          const SizedBox(height: 4),
+          if (chatItem.messageCount > 0)
+            Container(
+              padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+              decoration: BoxDecoration(
+                color: ColorSystem.primary.shade500,
+                borderRadius: BorderRadius.circular(15),
+              ),
+              child: Text(
+                '${chatItem.messageCount}+',
+                style: FontSystem.Sub1,
+              ),
+            ),
+        ],
+      );
 }
