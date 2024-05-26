@@ -17,12 +17,22 @@ class ChattingScreen extends BaseScreen<ChattingViewModel> {
       color: ColorSystem.secondary.shade50,
       child: Column(
         children: [
-          const Padding(
-            padding: EdgeInsets.only(top: 32.0, left: 16.0, right: 16.0),
-            child: Text(
-              "채팅방",
-              style: FontSystem.H1,
+          AppBar(
+            backgroundColor: Colors.transparent, // 배경 투명하게
+            elevation: 0, // 그림자 제거
+            leading: IconButton(
+              icon: const Icon(Icons.arrow_back, color: Colors.black),
+              // 뒤로가기 아이콘
+              onPressed: () => Get.back(), // 뒤로가기 동작
             ),
+            actions: [
+              IconButton(
+                icon: const Icon(Icons.logout, color: Colors.black), // 나가기 아이콘
+                onPressed: () {
+                  // 나가기 동작 구현
+               },
+              ),
+            ],
           ),
           chats(),
           chattingInput(),
@@ -55,7 +65,7 @@ class ChattingScreen extends BaseScreen<ChattingViewModel> {
           top: 20,
           left: 10,
           right: 10,
-          bottom: 180, // bottomNavigationBar의 높이만큼 패딩 추가
+          bottom: 20, // bottomNavigationBar의 높이만큼 패딩 추가
         ),
         decoration: BoxDecoration(
           color: Colors.white,
