@@ -1,18 +1,21 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:pill_on_phone/config/color_system.dart';
 import 'package:pill_on_phone/config/font_system.dart';
-import '../../../entity/Chat/chat_model.dart';
+import 'package:pill_on_phone/entity/Chat/chat_list_model.dart';
+import 'package:pill_on_phone/view/chatting/chatting_room_screen.dart';
 
 class ChatListItem extends StatelessWidget {
-  final ChatListItemModel chatItem;
+  final ChatListItemModel chatListItem;
 
-  const ChatListItem({super.key, required this.chatItem});
+  const ChatListItem({super.key, required this.chatListItem});
 
   @override
   Widget build(BuildContext context) {
     return InkWell(
       onTap: () {
         // 채팅방 들어가기 함수
+        Get.to(() => const ChattingScreen());
       },
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 16),
@@ -36,7 +39,7 @@ class ChatListItem extends StatelessWidget {
           height: 88,
           decoration: BoxDecoration(
             image: DecorationImage(
-              image: NetworkImage(chatItem.pharmacyImage ?? ''),
+              image: NetworkImage(chatListItem.pharmacyImage ?? ''),
               fit: BoxFit.cover,
             ),
           ),
@@ -48,12 +51,12 @@ class ChatListItem extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
-              chatItem.pharmacyName ?? '약국 이름',
+              chatListItem.pharmacyName ?? '약국 이름',
               style: FontSystem.H3,
             ),
             const SizedBox(height: 4),
             Text(
-              chatItem.lastMessage,
+              chatListItem.lastMessage,
               style: FontSystem.Sub2,
               overflow: TextOverflow.ellipsis,
               //넘쳤을 때 체크
@@ -66,11 +69,11 @@ class ChatListItem extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.end,
         children: [
           Text(
-            chatItem.lastMessageTime,
+            chatListItem.lastMessageTime,
             style: FontSystem.Sub2.copyWith(color: ColorSystem.neutral),
           ),
           const SizedBox(height: 4),
-          if (chatItem.messageCount > 0)
+          if (chatListItem.messageCount > 0)
             Container(
               padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
               decoration: BoxDecoration(
@@ -78,7 +81,7 @@ class ChatListItem extends StatelessWidget {
                 borderRadius: BorderRadius.circular(15),
               ),
               child: Text(
-                '${chatItem.messageCount}+',
+                '${chatListItem.messageCount}+',
                 style: FontSystem.Sub1,
               ),
             ),

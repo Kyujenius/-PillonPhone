@@ -5,12 +5,12 @@ import 'package:pill_on_phone/view/base/base_screen.dart';
 import 'package:pill_on_phone/view/chatting/widget/chatting_list_widget.dart';
 import 'package:pill_on_phone/view_model/chatting/chatting_view_model.dart';
 
-class ChattingScreen extends BaseScreen<ChattingViewModel> {
-  const ChattingScreen({super.key});
+class ChattingListScreen extends BaseScreen<ChattingViewModel> {
+  const ChattingListScreen({super.key});
 
   @override
   Widget buildBody(BuildContext context) {
-    viewModel.loadChatData(0);
+    viewModel.loadChatList(0);
 
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
@@ -24,7 +24,7 @@ class ChattingScreen extends BaseScreen<ChattingViewModel> {
         ),
         Expanded(
           child: Obx(() {
-            if (viewModel.isLoading.value) {
+            if (viewModel.isChatListLoading.value) {
               return const Center(child: CircularProgressIndicator());
             } else if (viewModel.errorMessage.isNotEmpty) {
               return Center(child: Text(viewModel.errorMessage.value));
@@ -32,8 +32,8 @@ class ChattingScreen extends BaseScreen<ChattingViewModel> {
               return ListView.builder(
                 itemCount: viewModel.chatList.length,
                 itemBuilder: (context, index) {
-                  final chat = viewModel.chatList[index];
-                  return ChatListItem(chatItem: chat);
+                  final chatList = viewModel.chatList[index];
+                  return ChatListItem(chatListItem: chatList);
                 },
               );
             }
