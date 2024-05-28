@@ -33,6 +33,9 @@ dependencies:
   # Svg
   flutter_svg: ^2.0.10+1
 
+  # Extended Nested Scroll View
+  extended_nested_scroll_view: ^6.2.1
+
 dev_dependencies:
   # Default
   flutter_test:
