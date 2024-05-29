@@ -1,9 +1,9 @@
 import 'package:extended_nested_scroll_view/extended_nested_scroll_view.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:pill_on_phone/config/app_routes.dart';
 import 'package:pill_on_phone/config/color_system.dart';
 import 'package:pill_on_phone/config/font_system.dart';
-import 'package:pill_on_phone/utility/log_util.dart';
 import 'package:pill_on_phone/view/pharmacy_detail/delegate/health_functional_food_tag_delegate.dart';
 import 'package:pill_on_phone/view/pharmacy_detail/widget/default/pharmacy_information_view.dart';
 import 'package:pill_on_phone/view/pharmacy_detail/widget/health_functional_food_brief/health_functional_food_brief_list_view.dart';
@@ -13,6 +13,8 @@ import 'package:pill_on_phone/widget/button/rounded_rectangle_text_button.dart';
 
 class PharmacyDetailScreen extends GetView<PharmacyDetailViewModel> {
   const PharmacyDetailScreen({super.key});
+
+  PharmacyDetailViewModel get viewModel => controller;
 
   @override
   Widget build(BuildContext context) {
@@ -68,7 +70,6 @@ class PharmacyDetailScreen extends GetView<PharmacyDetailViewModel> {
     );
   }
 
-  // 상담하기 버튼
   Widget _buildConsultationLayer() {
     return Positioned(
       left: 0,
@@ -84,7 +85,7 @@ class PharmacyDetailScreen extends GetView<PharmacyDetailViewModel> {
               text: '약국과 상담하기',
               textStyle: FontSystem.H2.copyWith(color: Colors.white),
               onPressed: () {
-                LogUtil.info('약국과 상담하기');
+                Get.toNamed(AppRoutes.CONSULTATION);
               },
               backgroundColor: ColorSystem.primary,
             ),

@@ -1,9 +1,9 @@
 import 'package:extended_nested_scroll_view/extended_nested_scroll_view.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:pill_on_phone/config/app_routes.dart';
 import 'package:pill_on_phone/config/color_system.dart';
 import 'package:pill_on_phone/config/font_system.dart';
-import 'package:pill_on_phone/utility/log_util.dart';
 import 'package:pill_on_phone/view/base/base_screen.dart';
 import 'package:pill_on_phone/view/pharmacy/delegate/pharmacy_criteria_tag_delegate.dart';
 import 'package:pill_on_phone/view/pharmacy/widget/pharmacy_brief/pharmacy_brief_list_view.dart';
@@ -57,7 +57,7 @@ class PharmacyScreen extends BaseScreen<PharmacyViewModel> {
         text: '영양제 검색하기',
         textStyle: FontSystem.H2.copyWith(color: Colors.white),
         onPressed: () {
-          LogUtil.info('영양제 검색 버튼 클릭');
+          Get.toNamed(AppRoutes.SEARCH_HEALTH_FUNCTION_FOOD);
         },
         backgroundColor: ColorSystem.primary,
       ),

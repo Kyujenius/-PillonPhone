@@ -2,9 +2,9 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
+import 'package:pill_on_phone/config/app_routes.dart';
 import 'package:pill_on_phone/config/color_system.dart';
 import 'package:pill_on_phone/config/font_system.dart';
-import 'package:pill_on_phone/utility/log_util.dart';
 import 'package:pill_on_phone/view/base/base_widget.dart';
 import 'package:pill_on_phone/view_model/pharmacy_detail/pharmacy_detail_view_model.dart';
 
@@ -99,7 +99,7 @@ class PharmacyInformationView extends BaseWidget<PharmacyDetailViewModel> {
               const Spacer(),
               GestureDetector(
                 onTap: () {
-                  LogUtil.info("Review Clicked");
+                  Get.toNamed(AppRoutes.REVIEW);
                 },
                 child: Row(
                   children: [
