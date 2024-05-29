@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 import 'package:pill_on_phone/config/color_system.dart';
 import 'package:pill_on_phone/config/font_system.dart';
-import 'package:pill_on_phone/entity/tag/tag_state.dart';
+import 'package:pill_on_phone/entity/tag/health_functional_food_tag_state.dart';
 
-class TagItem extends StatelessWidget {
-  const TagItem({
+class HealthFunctionalFoodTagItem extends StatelessWidget {
+  const HealthFunctionalFoodTagItem({
     super.key,
     required this.state,
     required this.isFirst,
@@ -13,7 +12,7 @@ class TagItem extends StatelessWidget {
     required this.onTap,
   });
 
-  final TagState state;
+  final HealthFunctionalFoodTagState state;
   final bool isFirst;
   final bool isLast;
   final Function()? onTap;
@@ -24,7 +23,7 @@ class TagItem extends StatelessWidget {
       children: [
         if (isFirst) const SizedBox(width: 16) else const SizedBox(width: 4),
         Container(
-          width: (Get.width - 56) / 4,
+          padding: const EdgeInsets.symmetric(horizontal: 16),
           decoration: BoxDecoration(
             color: state.isSelected
                 ? ColorSystem.primary
@@ -36,7 +35,7 @@ class TagItem extends StatelessWidget {
             borderRadius: BorderRadius.circular(24),
             child: Center(
               child: Text(
-                state.criteria.koName,
+                state.type.koName,
                 style: FontSystem.H5.copyWith(
                   color:
                       state.isSelected ? ColorSystem.white : ColorSystem.black,

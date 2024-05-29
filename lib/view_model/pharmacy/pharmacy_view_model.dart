@@ -1,13 +1,13 @@
 import 'package:get/get.dart';
-import 'package:pill_on_phone/entity/pharmacy/pharmacy_brief_state.dart';
-import 'package:pill_on_phone/entity/tag/tag_state.dart';
+import 'package:pill_on_phone/entity/pharmacy/pharmacy_information_state.dart';
+import 'package:pill_on_phone/entity/tag/pharmacy_criteria_tag_state.dart';
 import 'package:pill_on_phone/type/e_pharmacy_criteria.dart';
 
 class PharmacyViewModel extends GetxController {
-  late final RxList<TagState> _tags;
+  late final RxList<PharmacyCriteriaTagState> _tags;
   late final RxList<PharmacyBriefState> _pharmacyBriefs;
 
-  List<TagState> get tags => _tags;
+  List<PharmacyCriteriaTagState> get tags => _tags;
   List<PharmacyBriefState> get pharmacyBriefs => _pharmacyBriefs;
 
   @override
@@ -15,7 +15,7 @@ class PharmacyViewModel extends GetxController {
     super.onInit();
 
     _tags = EPharmacyCriteria.values
-        .map((criteria) => TagState.fromCriteria(
+        .map((criteria) => PharmacyCriteriaTagState.fromEnum(
               criteria,
               criteria == EPharmacyCriteria.all,
             ))
@@ -36,8 +36,12 @@ class PharmacyViewModel extends GetxController {
   }
 
   /// Fetch selected tag
-  void fetchSelectedTag(EPharmacyCriteria criteria) {
-    final index = _tags.indexWhere((tag) => tag.criteria == criteria);
+  Future<bool> fetchSelectedTag(EPharmacyCriteria criteria) async {
+    final index = _tags.indexWhere((tag) => tag.type == criteria);
+
+    if (_tags[index].isSelected) {
+      return false;
+    }
 
     /// Deselect all tags except the selected tag
     for (int i = 0; i < _tags.length; i++) {
@@ -54,5 +58,7 @@ class PharmacyViewModel extends GetxController {
         isSelected: !_tags[index].isSelected,
       );
     }
+
+    return true;
   }
 }

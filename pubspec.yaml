@@ -36,6 +36,9 @@ dependencies:
   # Extended Nested Scroll View
   extended_nested_scroll_view: ^6.2.1
 
+  # Cached Network Image
+  cached_network_image: ^3.3.1
+
 dev_dependencies:
   # Default
   flutter_test:

@@ -19,7 +19,12 @@ class PharmacyBriefListView extends BaseWidget<PharmacyViewModel> {
             isFirst: index == 0,
             isLast: index == viewModel.pharmacyBriefs.length - 1,
             onTap: () {
-              Get.toNamed(AppRoutes.PHARMACY_DETAIL);
+              Get.toNamed(
+                AppRoutes.PHARMACY_DETAIL,
+                arguments: {
+                  "id": viewModel.pharmacyBriefs[index].id,
+                },
+              );
             },
           );
         },

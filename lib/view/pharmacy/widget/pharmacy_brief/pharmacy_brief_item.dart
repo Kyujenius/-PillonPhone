@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:pill_on_phone/config/color_system.dart';
 import 'package:pill_on_phone/config/font_system.dart';
-import 'package:pill_on_phone/entity/pharmacy/pharmacy_brief_state.dart';
+import 'package:pill_on_phone/entity/pharmacy/pharmacy_information_state.dart';
 
 class PharmacyBriefItem extends StatelessWidget {
   const PharmacyBriefItem({
