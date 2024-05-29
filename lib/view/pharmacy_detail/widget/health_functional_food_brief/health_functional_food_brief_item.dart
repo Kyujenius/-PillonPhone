@@ -90,7 +90,7 @@ class HealthFunctionalFoodBriefItem extends StatelessWidget {
               ],
             ),
           ),
-          if (isLast) const SizedBox(height: 16) else const SizedBox(height: 8),
+          if (isLast) const SizedBox(height: 76) else const SizedBox(height: 8),
         ],
       ),
     );
