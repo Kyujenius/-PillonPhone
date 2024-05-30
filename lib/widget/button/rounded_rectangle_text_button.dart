@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:pill_on_phone/config/color_system.dart';
 
 class RoundedRectangleTextButton extends StatelessWidget {
   const RoundedRectangleTextButton({
@@ -25,6 +26,7 @@ class RoundedRectangleTextButton extends StatelessWidget {
       onPressed: onPressed,
       style: TextButton.styleFrom(
         backgroundColor: backgroundColor,
+        disabledBackgroundColor: ColorSystem.neutral.shade400,
         foregroundColor: foregroundColor,
         side: borderSide,
         shape: RoundedRectangleBorder(

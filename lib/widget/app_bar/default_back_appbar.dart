@@ -21,7 +21,7 @@ class DefaultBackAppBar extends StatelessWidget {
         padding: const EdgeInsets.only(right: 16),
         child: Text(
           title,
-          style: FontSystem.H1,
+          style: FontSystem.H2,
         ),
       ),
       centerTitle: false,

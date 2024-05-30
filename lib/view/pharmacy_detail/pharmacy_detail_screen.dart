@@ -90,7 +90,7 @@ class PharmacyDetailScreen extends GetView<PharmacyDetailViewModel> {
               backgroundColor: ColorSystem.primary,
             ),
           ),
-          const SizedBox(height: 32),
+          const SizedBox(height: 48),
         ],
       ),
     );
