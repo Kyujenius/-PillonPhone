@@ -1,4 +1,3 @@
-import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
@@ -7,6 +6,7 @@ import 'package:pill_on_phone/config/color_system.dart';
 import 'package:pill_on_phone/config/font_system.dart';
 import 'package:pill_on_phone/view/base/base_widget.dart';
 import 'package:pill_on_phone/view_model/pharmacy_detail/pharmacy_detail_view_model.dart';
+import 'package:pill_on_phone/widget/box/image_box.dart';
 
 class PharmacyInformationView extends BaseWidget<PharmacyDetailViewModel> {
   const PharmacyInformationView({super.key});
@@ -32,20 +32,8 @@ class PharmacyInformationView extends BaseWidget<PharmacyDetailViewModel> {
       height: 220,
       color: ColorSystem.neutral.shade100,
       child: Obx(
-        () => CachedNetworkImage(
+        () => ImageBox(
           imageUrl: viewModel.information.imageUrl,
-          imageBuilder: (context, imageProvider) => Container(
-            decoration: BoxDecoration(
-              image: DecorationImage(
-                image: imageProvider,
-                fit: BoxFit.cover,
-              ),
-            ),
-          ),
-          placeholder: (context, url) => const Center(
-            child: CircularProgressIndicator(),
-          ),
-          errorWidget: (context, url, error) => const Icon(Icons.error),
         ),
       ),
     );
@@ -160,26 +148,12 @@ class PharmacyInformationView extends BaseWidget<PharmacyDetailViewModel> {
       child: Row(
         children: [
           ClipOval(
-            child: Container(
+            child: SizedBox(
               width: 48,
               height: 48,
-              color: ColorSystem.neutral.shade100,
               child: Obx(
-                () => CachedNetworkImage(
-                  imageUrl: viewModel.information.imageUrl,
-                  imageBuilder: (context, imageProvider) => Container(
-                    decoration: BoxDecoration(
-                      image: DecorationImage(
-                        image: imageProvider,
-                        fit: BoxFit.cover,
-                      ),
-                    ),
-                  ),
-                  placeholder: (context, url) => const Center(
-                    child: CircularProgressIndicator(),
-                  ),
-                  errorWidget: (context, url, error) => const Icon(Icons.error),
-                ),
+                () => ImageBox(
+                    imageUrl: viewModel.information.pharmacistImageUrl),
               ),
             ),
           ),

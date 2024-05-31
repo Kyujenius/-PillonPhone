@@ -3,6 +3,7 @@ import 'package:flutter_svg/svg.dart';
 import 'package:pill_on_phone/config/color_system.dart';
 import 'package:pill_on_phone/config/font_system.dart';
 import 'package:pill_on_phone/entity/pharmacy/pharmacy_information_state.dart';
+import 'package:pill_on_phone/widget/box/image_box.dart';
 
 class PharmacyBriefItem extends StatelessWidget {
   const PharmacyBriefItem({
@@ -33,19 +34,12 @@ class PharmacyBriefItem extends StatelessWidget {
             child: Row(
               children: [
                 const SizedBox(width: 16),
-                Ink(
+                ImageBox(
                   width: 92,
                   height: 92,
-                  decoration: BoxDecoration(
-                    color: ColorSystem.neutral.shade100,
-                    borderRadius: BorderRadius.circular(16),
-                  ),
-                  child: const Center(
-                    child: Text(
-                      '사진',
-                      style: FontSystem.H5,
-                    ),
-                  ),
+                  imageUrl: state.imageUrl,
+                  borderRadius: BorderRadius.circular(16),
+                  backgroundColor: ColorSystem.neutral.shade100,
                 ),
                 const SizedBox(width: 16),
                 Column(

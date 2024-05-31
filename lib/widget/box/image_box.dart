@@ -7,8 +7,8 @@ class ImageBox extends StatelessWidget {
   const ImageBox({
     super.key,
     required this.imageUrl,
-    required this.width,
-    required this.height,
+    this.width = double.infinity,
+    this.height = double.infinity,
     this.borderRadius = BorderRadius.zero,
     this.backgroundColor = ColorSystem.neutral,
   });

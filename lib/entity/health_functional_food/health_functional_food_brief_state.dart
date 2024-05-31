@@ -4,6 +4,7 @@ class HealthFunctionalFoodBriefState {
   final int id;
   final String name;
   final String manufacturer;
+  final String imageUrl;
   final EHealthFunctionalFood type;
   final int price;
 
@@ -12,6 +13,7 @@ class HealthFunctionalFoodBriefState {
     required this.name,
     required this.manufacturer,
     required this.type,
+    required this.imageUrl,
     required this.price,
   });
 
@@ -20,12 +22,14 @@ class HealthFunctionalFoodBriefState {
     String? name,
     String? manufacturer,
     EHealthFunctionalFood? type,
+    String? imageUrl,
     int? price,
   }) {
     return HealthFunctionalFoodBriefState(
       id: id ?? this.id,
       name: name ?? this.name,
       manufacturer: manufacturer ?? this.manufacturer,
+      imageUrl: imageUrl ?? this.imageUrl,
       type: type ?? this.type,
       price: price ?? this.price,
     );
@@ -36,6 +40,7 @@ class HealthFunctionalFoodBriefState {
       id: json['id'] as int,
       name: json['name'] as String,
       manufacturer: json['manufacturer'] as String,
+      imageUrl: json['imageUrl'] as String,
       type: EHealthFunctionalFood.values[json['type'] as int],
       price: json['price'] as int,
     );
@@ -46,6 +51,7 @@ class HealthFunctionalFoodBriefState {
       'id': id,
       'name': name,
       'manufacturer': manufacturer,
+      'imageUrl': imageUrl,
       'type': type.index,
       'price': price,
     };

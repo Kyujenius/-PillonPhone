@@ -43,6 +43,8 @@ class SearchHealthFunctionalFoodViewModel extends GetxController {
           id: 1,
           name: '헬스기능식품1',
           manufacturer: '제조사1',
+          imageUrl:
+              "https://www.sisajournal.com/news/photo/202109/224314_132765_3240.jpg",
           type: EHealthFunctionalFood.health,
           price: 10000,
         ),
@@ -50,6 +52,8 @@ class SearchHealthFunctionalFoodViewModel extends GetxController {
           id: 2,
           name: '헬스기능식품2',
           manufacturer: '제조사2',
+          imageUrl:
+              "https://quabdfrttgah10486813.cdn.ntruss.com/upload/mgz/197/20231206_45584.jpg",
           type: EHealthFunctionalFood.multiVitamin,
           price: 20000,
         ),
@@ -57,6 +61,8 @@ class SearchHealthFunctionalFoodViewModel extends GetxController {
           id: 3,
           name: '헬스기능식품3',
           manufacturer: '제조사3',
+          imageUrl:
+              "https://cloudinary.images-iherb.com/image/upload/f_auto,q_auto:eco/images/now/now00035/c/32.jpg",
           type: EHealthFunctionalFood.fatigueRecovery,
           price: 30000,
         ),
@@ -64,6 +70,8 @@ class SearchHealthFunctionalFoodViewModel extends GetxController {
           id: 1,
           name: '헬스기능식품1',
           manufacturer: '제조사1',
+          imageUrl:
+              "https://www.sisajournal.com/news/photo/202109/224314_132765_3240.jpg",
           type: EHealthFunctionalFood.health,
           price: 10000,
         ),
@@ -71,6 +79,8 @@ class SearchHealthFunctionalFoodViewModel extends GetxController {
           id: 2,
           name: '헬스기능식품2',
           manufacturer: '제조사2',
+          imageUrl:
+              "https://quabdfrttgah10486813.cdn.ntruss.com/upload/mgz/197/20231206_45584.jpg",
           type: EHealthFunctionalFood.multiVitamin,
           price: 20000,
         ),
@@ -78,6 +88,8 @@ class SearchHealthFunctionalFoodViewModel extends GetxController {
           id: 3,
           name: '헬스기능식품3',
           manufacturer: '제조사3',
+          imageUrl:
+              "https://cloudinary.images-iherb.com/image/upload/f_auto,q_auto:eco/images/now/now00035/c/32.jpg",
           type: EHealthFunctionalFood.fatigueRecovery,
           price: 30000,
         ),
@@ -85,6 +97,8 @@ class SearchHealthFunctionalFoodViewModel extends GetxController {
           id: 1,
           name: '헬스기능식품1',
           manufacturer: '제조사1',
+          imageUrl:
+              "https://www.sisajournal.com/news/photo/202109/224314_132765_3240.jpg",
           type: EHealthFunctionalFood.health,
           price: 10000,
         ),
@@ -92,6 +106,8 @@ class SearchHealthFunctionalFoodViewModel extends GetxController {
           id: 2,
           name: '헬스기능식품2',
           manufacturer: '제조사2',
+          imageUrl:
+              "https://quabdfrttgah10486813.cdn.ntruss.com/upload/mgz/197/20231206_45584.jpg",
           type: EHealthFunctionalFood.multiVitamin,
           price: 20000,
         ),
@@ -99,48 +115,8 @@ class SearchHealthFunctionalFoodViewModel extends GetxController {
           id: 3,
           name: '헬스기능식품3',
           manufacturer: '제조사3',
-          type: EHealthFunctionalFood.fatigueRecovery,
-          price: 30000,
-        ),
-        const HealthFunctionalFoodBriefState(
-          id: 1,
-          name: '헬스기능식품1',
-          manufacturer: '제조사1',
-          type: EHealthFunctionalFood.health,
-          price: 10000,
-        ),
-        const HealthFunctionalFoodBriefState(
-          id: 2,
-          name: '헬스기능식품2',
-          manufacturer: '제조사2',
-          type: EHealthFunctionalFood.multiVitamin,
-          price: 20000,
-        ),
-        const HealthFunctionalFoodBriefState(
-          id: 3,
-          name: '헬스기능식품3',
-          manufacturer: '제조사3',
-          type: EHealthFunctionalFood.fatigueRecovery,
-          price: 30000,
-        ),
-        const HealthFunctionalFoodBriefState(
-          id: 1,
-          name: '헬스기능식품1',
-          manufacturer: '제조사1',
-          type: EHealthFunctionalFood.health,
-          price: 10000,
-        ),
-        const HealthFunctionalFoodBriefState(
-          id: 2,
-          name: '헬스기능식품2',
-          manufacturer: '제조사2',
-          type: EHealthFunctionalFood.multiVitamin,
-          price: 20000,
-        ),
-        const HealthFunctionalFoodBriefState(
-          id: 3,
-          name: '헬스기능식품3',
-          manufacturer: '제조사3',
+          imageUrl:
+              "https://cloudinary.images-iherb.com/image/upload/f_auto,q_auto:eco/images/now/now00035/c/32.jpg",
           type: EHealthFunctionalFood.fatigueRecovery,
           price: 30000,
         ),
