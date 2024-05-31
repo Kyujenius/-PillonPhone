@@ -16,7 +16,7 @@ class DefaultAppBar extends StatelessWidget {
     return AppBar(
       title: Text(
         title,
-        style: FontSystem.H2,
+        style: FontSystem.H1,
       ),
       surfaceTintColor: Colors.white,
       backgroundColor: Colors.white,

@@ -8,10 +8,21 @@ import 'package:pill_on_phone/view/base/base_screen.dart';
 import 'package:pill_on_phone/view/pharmacy/delegate/pharmacy_criteria_tag_delegate.dart';
 import 'package:pill_on_phone/view/pharmacy/widget/pharmacy_brief/pharmacy_brief_list_view.dart';
 import 'package:pill_on_phone/view_model/pharmacy/pharmacy_view_model.dart';
+import 'package:pill_on_phone/widget/app_bar/default_app_bar.dart';
 import 'package:pill_on_phone/widget/button/rounded_rectangle_text_button.dart';
 
 class PharmacyScreen extends BaseScreen<PharmacyViewModel> {
   const PharmacyScreen({super.key});
+
+  @override
+  PreferredSizeWidget? buildAppBar(BuildContext context) {
+    return const PreferredSize(
+      preferredSize: Size.fromHeight(42),
+      child: DefaultAppBar(
+        title: '약국',
+      ),
+    );
+  }
 
   @override
   Widget buildBody(BuildContext context) {
