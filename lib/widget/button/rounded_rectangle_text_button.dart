@@ -26,7 +26,7 @@ class RoundedRectangleTextButton extends StatelessWidget {
       onPressed: onPressed,
       style: TextButton.styleFrom(
         backgroundColor: backgroundColor,
-        disabledBackgroundColor: ColorSystem.neutral.shade400,
+        disabledBackgroundColor: ColorSystem.neutral.shade300,
         foregroundColor: foregroundColor,
         side: borderSide,
         shape: RoundedRectangleBorder(
