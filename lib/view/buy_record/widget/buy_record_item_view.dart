@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
+import 'package:pill_on_phone/config/app_routes.dart';
 import 'package:pill_on_phone/config/color_system.dart';
 import 'package:pill_on_phone/config/font_system.dart';
 import 'package:pill_on_phone/entity/buy_record/buy_record_brief_state.dart';
@@ -53,7 +54,12 @@ class BuyRecordItemView extends StatelessWidget {
                   const Spacer(),
                   GestureDetector(
                     onTap: () {
-                      print('cancel');
+                      Get.toNamed(
+                        AppRoutes.BUY_RECORD_DETAIL,
+                        arguments: {
+                          'id': state.id,
+                        },
+                      );
                     },
                     child: Row(
                       children: [

@@ -5,7 +5,7 @@ import 'package:pill_on_phone/entity/tag/health_functional_food_tag_state.dart';
 import 'package:pill_on_phone/type/e_health_functional_food.dart';
 
 class PharmacyDetailViewModel extends GetxController {
-  late final int id;
+  late final int _id;
 
   late final Rx<PharmacyInformationState> _information;
   late final RxList<HealthFunctionalFoodTagState> _tags;
@@ -19,7 +19,7 @@ class PharmacyDetailViewModel extends GetxController {
   void onInit() {
     super.onInit();
 
-    id = Get.arguments['id'];
+    _id = Get.arguments['id'];
 
     _information = PharmacyInformationState.initial().obs;
     _tags = EHealthFunctionalFood.toStates.obs;

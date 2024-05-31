@@ -1,12 +1,14 @@
 import 'package:get/get.dart';
 import 'package:pill_on_phone/config/app_routes.dart';
 import 'package:pill_on_phone/view/buy_record/buy_record_screen.dart';
+import 'package:pill_on_phone/view/buy_record_detail/buy_record_detail_screen.dart';
 import 'package:pill_on_phone/view/consultation/consultation_screen.dart';
 import 'package:pill_on_phone/view/pharmacy_detail/pharmacy_detail_screen.dart';
 import 'package:pill_on_phone/view/review/review_screen.dart';
 import 'package:pill_on_phone/view/root/root_screen.dart';
 import 'package:pill_on_phone/view/search_health_functional_food/search_health_functional_food_screen.dart';
-import 'package:pill_on_phone/view_model/buy_record_screen/buy_record_binding.dart';
+import 'package:pill_on_phone/view_model/buy_record/buy_record_binding.dart';
+import 'package:pill_on_phone/view_model/buy_record_detail/buy_record_detail_binding.dart';
 import 'package:pill_on_phone/view_model/chatting/chatting_binding.dart';
 import 'package:pill_on_phone/view_model/consultation/consultation_binding.dart';
 import 'package:pill_on_phone/view_model/pharmacy/pharmacy_binding.dart';
@@ -52,6 +54,11 @@ abstract class AppPages {
       name: AppRoutes.BUY_RECORD,
       page: () => const BuyRecordScreen(),
       binding: BuyRecordBinding(),
+    ),
+    GetPage(
+      name: AppRoutes.BUY_RECORD_DETAIL,
+      page: () => const BuyRecordDetailScreen(),
+      binding: BuyRecordDetailBinding(),
     ),
   ];
 }

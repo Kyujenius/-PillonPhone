@@ -3,7 +3,7 @@ import 'package:get/get.dart';
 import 'package:pill_on_phone/utility/log_util.dart';
 import 'package:pill_on_phone/view/base/base_widget.dart';
 import 'package:pill_on_phone/view/buy_record/widget/buy_record_item_view.dart';
-import 'package:pill_on_phone/view_model/buy_record_screen/buy_record_view_model.dart';
+import 'package:pill_on_phone/view_model/buy_record/buy_record_view_model.dart';
 
 class BuyRecordListView extends BaseWidget<BuyRecordViewModel> {
   const BuyRecordListView({super.key});
