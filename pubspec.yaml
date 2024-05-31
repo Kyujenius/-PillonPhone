@@ -33,6 +33,15 @@ dependencies:
   # Svg
   flutter_svg: ^2.0.10+1
 
+  # Extended Nested Scroll View
+  extended_nested_scroll_view: ^6.2.1
+
+  # Cached Network Image
+  cached_network_image: ^3.3.1
+
+  # Skeleton UI
+  shimmer: ^3.0.0
+
 dev_dependencies:
   # Default
   flutter_test:
