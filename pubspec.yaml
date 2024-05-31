@@ -39,6 +39,9 @@ dependencies:
   # Cached Network Image
   cached_network_image: ^3.3.1
 
+  # Skeleton UI
+  shimmer: ^3.0.0
+
 dev_dependencies:
   # Default
   flutter_test:
