@@ -66,7 +66,7 @@ abstract class ColorSystem {
   static const int _errorValue = 0xFFE24A4A;
 
   /// Neutral Color
-  static MaterialColor neutral = const MaterialColor(
+  static const MaterialColor neutral = MaterialColor(
     _neutralValue,
     <int, Color>{
       900: Color(0xFF313139),

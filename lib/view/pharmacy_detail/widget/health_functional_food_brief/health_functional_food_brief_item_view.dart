@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 import 'package:pill_on_phone/config/color_system.dart';
 import 'package:pill_on_phone/config/font_system.dart';
 import 'package:pill_on_phone/entity/health_functional_food/health_functional_food_brief_state.dart';
+import 'package:pill_on_phone/widget/box/image_box.dart';
 
 class HealthFunctionalFoodBriefItem extends StatelessWidget {
   const HealthFunctionalFoodBriefItem({
@@ -33,7 +34,13 @@ class HealthFunctionalFoodBriefItem extends StatelessWidget {
             child: Row(
               children: [
                 const SizedBox(width: 16),
-                imageView(),
+                ImageBox(
+                  width: 92,
+                  height: 92,
+                  imageUrl: state.imageUrl,
+                  borderRadius: BorderRadius.circular(16),
+                  backgroundColor: ColorSystem.neutral.shade100,
+                ),
                 const SizedBox(width: 16),
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,

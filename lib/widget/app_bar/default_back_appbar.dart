@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:pill_on_phone/config/color_system.dart';
 import 'package:pill_on_phone/config/font_system.dart';
 
 class DefaultBackAppBar extends StatelessWidget {
@@ -7,11 +8,13 @@ class DefaultBackAppBar extends StatelessWidget {
     super.key,
     required this.title,
     this.actions = const <Widget>[],
+    this.backgroundColor = ColorSystem.white,
     this.onBackPress,
   });
 
   final String title;
   final List<Widget> actions;
+  final Color? backgroundColor;
   final Function()? onBackPress;
 
   @override
@@ -25,15 +28,15 @@ class DefaultBackAppBar extends StatelessWidget {
         ),
       ),
       centerTitle: false,
-      surfaceTintColor: Colors.white,
-      backgroundColor: Colors.white,
+      surfaceTintColor: backgroundColor,
+      backgroundColor: backgroundColor,
       automaticallyImplyLeading: true,
       titleSpacing: 0,
       leadingWidth: 50,
       leading: IconButton(
         style: TextButton.styleFrom(
           splashFactory: NoSplash.splashFactory,
-          foregroundColor: Colors.white,
+          foregroundColor: backgroundColor,
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(16.0),
           ),

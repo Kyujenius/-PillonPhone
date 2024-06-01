@@ -5,7 +5,7 @@ import 'package:pill_on_phone/entity/tag/health_functional_food_tag_state.dart';
 import 'package:pill_on_phone/type/e_health_functional_food.dart';
 
 class PharmacyDetailViewModel extends GetxController {
-  late final int id;
+  late final int _id;
 
   late final Rx<PharmacyInformationState> _information;
   late final RxList<HealthFunctionalFoodTagState> _tags;
@@ -19,7 +19,7 @@ class PharmacyDetailViewModel extends GetxController {
   void onInit() {
     super.onInit();
 
-    id = Get.arguments['id'];
+    _id = Get.arguments['id'];
 
     _information = PharmacyInformationState.initial().obs;
     _tags = EHealthFunctionalFood.toStates.obs;
@@ -52,6 +52,8 @@ class PharmacyDetailViewModel extends GetxController {
           id: 1,
           name: '헬스기능식품1',
           manufacturer: '제조사1',
+          imageUrl:
+              "https://www.sisajournal.com/news/photo/202109/224314_132765_3240.jpg",
           type: EHealthFunctionalFood.health,
           price: 10000,
         ),
@@ -59,6 +61,8 @@ class PharmacyDetailViewModel extends GetxController {
           id: 2,
           name: '헬스기능식품2',
           manufacturer: '제조사2',
+          imageUrl:
+              "https://quabdfrttgah10486813.cdn.ntruss.com/upload/mgz/197/20231206_45584.jpg",
           type: EHealthFunctionalFood.multiVitamin,
           price: 20000,
         ),
@@ -66,6 +70,8 @@ class PharmacyDetailViewModel extends GetxController {
           id: 3,
           name: '헬스기능식품3',
           manufacturer: '제조사3',
+          imageUrl:
+              "https://cloudinary.images-iherb.com/image/upload/f_auto,q_auto:eco/images/now/now00035/c/32.jpg",
           type: EHealthFunctionalFood.fatigueRecovery,
           price: 30000,
         ),
@@ -73,6 +79,8 @@ class PharmacyDetailViewModel extends GetxController {
           id: 1,
           name: '헬스기능식품1',
           manufacturer: '제조사1',
+          imageUrl:
+              "https://www.sisajournal.com/news/photo/202109/224314_132765_3240.jpg",
           type: EHealthFunctionalFood.health,
           price: 10000,
         ),
@@ -80,6 +88,8 @@ class PharmacyDetailViewModel extends GetxController {
           id: 2,
           name: '헬스기능식품2',
           manufacturer: '제조사2',
+          imageUrl:
+              "https://quabdfrttgah10486813.cdn.ntruss.com/upload/mgz/197/20231206_45584.jpg",
           type: EHealthFunctionalFood.multiVitamin,
           price: 20000,
         ),
@@ -87,6 +97,8 @@ class PharmacyDetailViewModel extends GetxController {
           id: 3,
           name: '헬스기능식품3',
           manufacturer: '제조사3',
+          imageUrl:
+              "https://cloudinary.images-iherb.com/image/upload/f_auto,q_auto:eco/images/now/now00035/c/32.jpg",
           type: EHealthFunctionalFood.fatigueRecovery,
           price: 30000,
         ),
@@ -94,6 +106,8 @@ class PharmacyDetailViewModel extends GetxController {
           id: 1,
           name: '헬스기능식품1',
           manufacturer: '제조사1',
+          imageUrl:
+              "https://www.sisajournal.com/news/photo/202109/224314_132765_3240.jpg",
           type: EHealthFunctionalFood.health,
           price: 10000,
         ),
@@ -101,6 +115,8 @@ class PharmacyDetailViewModel extends GetxController {
           id: 2,
           name: '헬스기능식품2',
           manufacturer: '제조사2',
+          imageUrl:
+              "https://quabdfrttgah10486813.cdn.ntruss.com/upload/mgz/197/20231206_45584.jpg",
           type: EHealthFunctionalFood.multiVitamin,
           price: 20000,
         ),
@@ -108,6 +124,8 @@ class PharmacyDetailViewModel extends GetxController {
           id: 3,
           name: '헬스기능식품3',
           manufacturer: '제조사3',
+          imageUrl:
+              "https://cloudinary.images-iherb.com/image/upload/f_auto,q_auto:eco/images/now/now00035/c/32.jpg",
           type: EHealthFunctionalFood.fatigueRecovery,
           price: 30000,
         ),
@@ -115,6 +133,8 @@ class PharmacyDetailViewModel extends GetxController {
           id: 1,
           name: '헬스기능식품1',
           manufacturer: '제조사1',
+          imageUrl:
+              "https://www.sisajournal.com/news/photo/202109/224314_132765_3240.jpg",
           type: EHealthFunctionalFood.health,
           price: 10000,
         ),
@@ -122,6 +142,8 @@ class PharmacyDetailViewModel extends GetxController {
           id: 2,
           name: '헬스기능식품2',
           manufacturer: '제조사2',
+          imageUrl:
+              "https://quabdfrttgah10486813.cdn.ntruss.com/upload/mgz/197/20231206_45584.jpg",
           type: EHealthFunctionalFood.multiVitamin,
           price: 20000,
         ),
@@ -129,6 +151,8 @@ class PharmacyDetailViewModel extends GetxController {
           id: 3,
           name: '헬스기능식품3',
           manufacturer: '제조사3',
+          imageUrl:
+              "https://cloudinary.images-iherb.com/image/upload/f_auto,q_auto:eco/images/now/now00035/c/32.jpg",
           type: EHealthFunctionalFood.fatigueRecovery,
           price: 30000,
         ),
@@ -136,6 +160,8 @@ class PharmacyDetailViewModel extends GetxController {
           id: 1,
           name: '헬스기능식품1',
           manufacturer: '제조사1',
+          imageUrl:
+              "https://www.sisajournal.com/news/photo/202109/224314_132765_3240.jpg",
           type: EHealthFunctionalFood.health,
           price: 10000,
         ),
@@ -143,6 +169,8 @@ class PharmacyDetailViewModel extends GetxController {
           id: 2,
           name: '헬스기능식품2',
           manufacturer: '제조사2',
+          imageUrl:
+              "https://quabdfrttgah10486813.cdn.ntruss.com/upload/mgz/197/20231206_45584.jpg",
           type: EHealthFunctionalFood.multiVitamin,
           price: 20000,
         ),
@@ -150,6 +178,8 @@ class PharmacyDetailViewModel extends GetxController {
           id: 3,
           name: '헬스기능식품3',
           manufacturer: '제조사3',
+          imageUrl:
+              "https://cloudinary.images-iherb.com/image/upload/f_auto,q_auto:eco/images/now/now00035/c/32.jpg",
           type: EHealthFunctionalFood.fatigueRecovery,
           price: 30000,
         ),
