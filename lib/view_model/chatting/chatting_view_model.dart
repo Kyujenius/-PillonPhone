@@ -2,6 +2,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
 import 'package:pill_on_phone/entity/Chat/chat_list_model.dart';
 import 'package:pill_on_phone/entity/Chat/chat_model.dart';
+import 'package:pill_on_phone/entity/health_functional_food/health_functional_food_brief_state.dart';
+import 'package:pill_on_phone/type/e_health_functional_food.dart';
 
 class ChattingViewModel extends GetxController {
   late final RxList<ChatListItemModel> chatList;
@@ -62,13 +64,32 @@ class ChattingViewModel extends GetxController {
   // 예시 채팅 메시지 데이터
   final dummyChatMessages = [
     ChatModel(
-      senderId: 1,
-      receiverId: 1,
-      pharmacyName: '약알 약국',
-      content: '안녕하세요. 문의하신 내용 답변드립니다.',
-      timestamp: DateTime.now(),
-      messageType: MessageType.pharmacy,
-    ),
+        senderId: 1,
+        receiverId: 1,
+        content: '제가 이 영양제들을 사고싶은데 뭐가 좋을까요??',
+        timestamp: DateTime.now(),
+        pillList: [
+          const HealthFunctionalFoodBriefState(
+            id: 1,
+            name: '헬스기능식품1',
+            manufacturer: '제조사1',
+            imageUrl:
+            "https://www.sisajournal.com/news/photo/202109/224314_132765_3240.jpg",
+            type: EHealthFunctionalFood.health,
+            price: 10000,
+          ),
+          const HealthFunctionalFoodBriefState(
+            id: 2,
+            name: '헬스기능식품2',
+            manufacturer: '제조사2',
+            imageUrl:
+            "https://quabdfrttgah10486813.cdn.ntruss.com/upload/mgz/197/20231206_45584.jpg",
+            type: EHealthFunctionalFood.multiVitamin,
+            price: 20000,
+          )
+        ],
+        // pillList 초기화
+        messageType: MessageType.userInit),
     ChatModel(
       senderId: 1,
       receiverId: 1,
@@ -77,11 +98,47 @@ class ChattingViewModel extends GetxController {
       messageType: MessageType.admin,
     ),
     ChatModel(
+        senderId: 1,
+        receiverId: 1,
+        content: '',
+        timestamp: DateTime.now(),
+        pharmacyName: '약알 약국',
+        pillList: [
+          const HealthFunctionalFoodBriefState(
+            id: 1,
+            name: '헬스기능식품1',
+            manufacturer: '제조사1',
+            imageUrl:
+                "https://www.sisajournal.com/news/photo/202109/224314_132765_3240.jpg",
+            type: EHealthFunctionalFood.health,
+            price: 10000,
+          ),
+          const HealthFunctionalFoodBriefState(
+            id: 2,
+            name: '헬스기능식품2',
+            manufacturer: '제조사2',
+            imageUrl:
+                "https://quabdfrttgah10486813.cdn.ntruss.com/upload/mgz/197/20231206_45584.jpg",
+            type: EHealthFunctionalFood.multiVitamin,
+            price: 20000,
+          )
+        ],
+        // pillList 초기화
+        messageType: MessageType.pharmacyRecommend),
+    ChatModel(
+      senderId: 1,
+      receiverId: 1,
+      pharmacyName: '약알 약국',
+      content: '안녕하세요. 문의하신 내용 답변드립니다. 이와 같은 약들이 좋을 것으로 보입니다!',
+      timestamp: DateTime.now(),
+      messageType: MessageType.pharmacyBasic,
+    ),
+    ChatModel(
       senderId: 1,
       receiverId: 1,
       content: '네, 감사합니다.',
       timestamp: DateTime.now(),
-      messageType: MessageType.user,
+      messageType: MessageType.userBasic,
     ),
   ];
 
