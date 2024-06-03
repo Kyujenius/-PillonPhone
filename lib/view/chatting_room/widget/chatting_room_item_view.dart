@@ -3,13 +3,13 @@ import 'package:get/get.dart';
 import 'package:intl/intl.dart';
 import 'package:pill_on_phone/config/color_system.dart';
 import 'package:pill_on_phone/config/font_system.dart';
-import 'package:pill_on_phone/entity/Chat/chat_model.dart';
+import 'package:pill_on_phone/entity/Chat/message_state.dart';
 import 'package:pill_on_phone/widget/box/image_box.dart';
 
-class Chat extends StatelessWidget {
-  final ChatModel chatItem;
+class ChattingRoomItemView extends StatelessWidget {
+  final MessageState message;
 
-  const Chat({super.key, required this.chatItem});
+  const ChattingRoomItemView({super.key, required this.message});
 
   @override
   Widget build(BuildContext context) {
@@ -19,7 +19,7 @@ class Chat extends StatelessWidget {
   }
 
   Widget _buildChatContent() {
-    switch (chatItem.messageType) {
+    switch (message.messageType) {
       case MessageType.pharmacyBasic:
         return _buildPharmacyChat();
       case MessageType.pharmacyRecommend:
@@ -52,7 +52,7 @@ class Chat extends StatelessWidget {
                 ),
                 child: Center(
                   child: Text(
-                    chatItem.pharmacyName.substring(0, 1),
+                    message.pharmacyName.substring(0, 1),
                     // 약국 이름 첫 글자 => 향후에 사진을 바꿔야 함.
                     style: FontSystem.Sub2.copyWith(color: Colors.black),
                   ),
@@ -63,7 +63,7 @@ class Chat extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text(chatItem.pharmacyName, style: FontSystem.H3),
+                    Text(message.pharmacyName, style: FontSystem.H3),
                     const SizedBox(height: 4),
                   ],
                 ),
@@ -84,7 +84,7 @@ class Chat extends StatelessWidget {
               child: Padding(
                 padding: const EdgeInsets.all(16.0),
                 child: Text(
-                  chatItem.content,
+                  message.content,
                   style: FontSystem.Sub2,
                 ),
               ),
@@ -92,7 +92,7 @@ class Chat extends StatelessWidget {
           ),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 16),
-            child: Text(_formatTimestamp(chatItem.timestamp),
+            child: Text(_formatTimestamp(message.timestamp),
                 style: FontSystem.Sub3),
           ),
         ],
@@ -101,7 +101,7 @@ class Chat extends StatelessWidget {
   }
 
   Widget _buildPharmacyRecommendChat() {
-    if (chatItem.pillList == null || chatItem.pillList!.isEmpty) {
+    if (message.pillList == null || message.pillList!.isEmpty) {
       return Container();
     }
 
@@ -120,7 +120,7 @@ class Chat extends StatelessWidget {
                 ),
                 child: Center(
                   child: Text(
-                    chatItem.pharmacyName.substring(0, 1),
+                    message.pharmacyName.substring(0, 1),
                     // 약국 이름 첫 글자 => 향후에 사진을 바꿔야 함.
                     style: FontSystem.Sub2.copyWith(color: Colors.black),
                   ),
@@ -131,7 +131,7 @@ class Chat extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text(chatItem.pharmacyName, style: FontSystem.H3),
+                    Text(message.pharmacyName, style: FontSystem.H3),
                     const SizedBox(height: 4),
                   ],
                 ),
@@ -155,9 +155,9 @@ class Chat extends StatelessWidget {
                 ListView.builder(
                   shrinkWrap: true,
                   physics: const NeverScrollableScrollPhysics(),
-                  itemCount: chatItem.pillList!.length,
+                  itemCount: message.pillList!.length,
                   itemBuilder: (context, index) {
-                    final pill = chatItem.pillList![index];
+                    final pill = message.pillList![index];
                     return Padding(
                       padding: const EdgeInsets.all(10.0),
                       child: Column(
@@ -207,20 +207,19 @@ class Chat extends StatelessWidget {
                 const SizedBox(
                   height: 10,
                 ),
-                Builder(
-                  builder: (context) {
-                    return ElevatedButton(
-                      onPressed: () {
-                        Get.bottomSheet(_showBuyingConfirmation(context));
-                      },
-                      style: ElevatedButton.styleFrom(
-                          fixedSize: const Size(300, 62),
-                          backgroundColor: ColorSystem.primary.shade500),
-                      child: Text('구매하기',
-                          style: FontSystem.H2.copyWith(color: ColorSystem.white)),
-                    );
-                  }
-                ),
+                Builder(builder: (context) {
+                  return ElevatedButton(
+                    onPressed: () {
+                      Get.bottomSheet(_showBuyingConfirmation(context));
+                    },
+                    style: ElevatedButton.styleFrom(
+                        fixedSize: const Size(300, 62),
+                        backgroundColor: ColorSystem.primary.shade500),
+                    child: Text('구매하기',
+                        style:
+                            FontSystem.H2.copyWith(color: ColorSystem.white)),
+                  );
+                }),
                 const SizedBox(
                   height: 30,
                 ),
@@ -252,7 +251,7 @@ class Chat extends StatelessWidget {
               ),
               const SizedBox(width: 20),
               Text(
-                chatItem.content,
+                message.content,
                 style: FontSystem.Sub2.copyWith(
                     color: ColorSystem.primary.shade700),
               )
@@ -280,13 +279,13 @@ class Chat extends StatelessWidget {
                   bottomLeft: Radius.circular(12),
                 ),
               ),
-              child: Text(chatItem.content,
+              child: Text(message.content,
                   style: FontSystem.Sub2.copyWith(color: ColorSystem.white)),
             ),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 16),
               child: Text(
-                _formatTimestamp(chatItem.timestamp),
+                _formatTimestamp(message.timestamp),
                 style: FontSystem.Sub3,
               ),
             ),
@@ -303,7 +302,6 @@ class Chat extends StatelessWidget {
         alignment: Alignment.centerRight, // 오른쪽 정렬
         child: Container(
           width: 300,
-
           padding: const EdgeInsets.all(15),
           decoration: BoxDecoration(
             color: ColorSystem.secondary.shade600,
@@ -325,10 +323,10 @@ class Chat extends StatelessWidget {
               ListView.builder(
                 shrinkWrap: true, // ListView 크기를 내용에 맞게 조절
                 physics: const NeverScrollableScrollPhysics(), // 스크롤 방지
-                itemCount: chatItem.pillList!.length,
+                itemCount: message.pillList!.length,
                 itemBuilder: (context, index) {
                   return Text(
-                    '${index + 1}. ${chatItem.pillList![index].name}',
+                    '${index + 1}. ${message.pillList![index].name}',
                     // 숫자와 약 이름 표시
                     style: FontSystem.Sub2.copyWith(color: ColorSystem.white),
                   );
@@ -338,7 +336,7 @@ class Chat extends StatelessWidget {
               Text("전하고 싶은 말",
                   style: FontSystem.H4.copyWith(color: ColorSystem.white)),
               Text(
-                chatItem.content,
+                message.content,
                 style: FontSystem.Sub2.copyWith(color: ColorSystem.white),
               )
             ],
@@ -378,7 +376,7 @@ class Chat extends StatelessWidget {
           const SizedBox(height: 10),
           Text('결제 시에 3일 뒤 약국에서 받아가실 수 있습니다!',
               style:
-              FontSystem.H5.copyWith(color: ColorSystem.neutral.shade500)),
+                  FontSystem.H5.copyWith(color: ColorSystem.neutral.shade500)),
           const SizedBox(height: 20),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceAround,

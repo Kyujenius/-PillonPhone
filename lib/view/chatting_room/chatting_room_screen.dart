@@ -3,14 +3,14 @@ import 'package:get/get.dart';
 import 'package:pill_on_phone/config/color_system.dart';
 import 'package:pill_on_phone/config/font_system.dart';
 import 'package:pill_on_phone/view/base/base_screen.dart';
-import 'package:pill_on_phone/view/chatting/widget/chat_widget.dart';
+import 'package:pill_on_phone/view/chatting_room/widget/chatting_room_item_view.dart';
 import 'package:pill_on_phone/view_model/chatting/chatting_view_model.dart';
 import 'package:pill_on_phone/widget/app_bar/chatting_app_bar.dart';
 import 'package:pill_on_phone/widget/button/custom_icon_button.dart';
 import 'package:pill_on_phone/widget/button/smaill_custom_icon_button.dart';
 
-class ChattingScreen extends BaseScreen<ChattingViewModel> {
-  const ChattingScreen({super.key});
+class ChattingRoomScreen extends BaseScreen<ChattingViewModel> {
+  const ChattingRoomScreen({super.key});
 
   @override
   PreferredSizeWidget? buildAppBar(BuildContext context) {
@@ -32,7 +32,6 @@ class ChattingScreen extends BaseScreen<ChattingViewModel> {
         ));
   }
 
-
   @override
   Widget buildBody(BuildContext context) {
     viewModel.loadChats(1);
@@ -51,19 +50,21 @@ class ChattingScreen extends BaseScreen<ChattingViewModel> {
 
   Widget chats() => Expanded(
         child: Obx(() {
-          if (viewModel.isChatLoading.value) {
+          if (viewModel.isMessageLoading.value) {
             return const Center(child: CircularProgressIndicator());
           } else if (viewModel.errorMessage.isNotEmpty) {
             return Center(child: Text(viewModel.errorMessage.value));
           } else {
             return ListView.builder(
-              itemCount: viewModel.chats.length,
+              itemCount: viewModel.messages.length,
               itemBuilder: (context, index) {
-                final chat = viewModel.chats[index];
+                final message = viewModel.messages[index];
                 return Column(
                   children: [
-                    Chat(chatItem: chat),
-                    const SizedBox(height: 20,)
+                    ChattingRoomItemView(message: message),
+                    const SizedBox(
+                      height: 20,
+                    )
                   ],
                 );
               },

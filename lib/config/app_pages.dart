@@ -2,7 +2,7 @@ import 'package:get/get.dart';
 import 'package:pill_on_phone/config/app_routes.dart';
 import 'package:pill_on_phone/view/buy_record/buy_record_screen.dart';
 import 'package:pill_on_phone/view/buy_record_detail/buy_record_detail_screen.dart';
-import 'package:pill_on_phone/view/chatting/chatting_room_screen.dart';
+import 'package:pill_on_phone/view/chatting_room/chatting_room_screen.dart';
 import 'package:pill_on_phone/view/consultation/consultation_screen.dart';
 import 'package:pill_on_phone/view/pharmacy_detail/pharmacy_detail_screen.dart';
 import 'package:pill_on_phone/view/review/review_screen.dart';
@@ -63,7 +63,7 @@ abstract class AppPages {
     ),
     GetPage(
       name: AppRoutes.CHATTING,
-      page: () => const ChattingScreen(),
+      page: () => const ChattingRoomScreen(),
       binding: ChattingBinding(),
     ),
   ];

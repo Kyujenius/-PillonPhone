@@ -1,6 +1,6 @@
 import 'package:pill_on_phone/entity/health_functional_food/health_functional_food_brief_state.dart';
 
-class ChatModel {
+class MessageState {
   final int senderId; // 보낸 사람 ID
   final int receiverId; // 받는 사람 ID
   final String pharmacyName; // 약국 이름 (약국 메시지인 경우에만)
@@ -9,7 +9,7 @@ class ChatModel {
   final DateTime timestamp; // 메시지 전송 시간
   final MessageType messageType; // 메시지 종류 (약국, 운영자, 사용자)
 
-  ChatModel({
+  MessageState({
     required this.senderId,
     required this.receiverId,
     this.pharmacyName = '',
@@ -20,7 +20,7 @@ class ChatModel {
   });
 
   // copyWith 메서드
-  ChatModel copyWith({
+  MessageState copyWith({
     int? senderId,
     int? receiverId,
     String? pharmacyName,
@@ -29,7 +29,7 @@ class ChatModel {
     DateTime? timestamp,
     MessageType? messageType,
   }) {
-    return ChatModel(
+    return MessageState(
       senderId: senderId ?? this.senderId,
       receiverId: receiverId ?? this.receiverId,
       pharmacyName: pharmacyName ?? this.pharmacyName,
@@ -40,8 +40,8 @@ class ChatModel {
     );
   }
 
-  factory ChatModel.fromJson(Map<String, dynamic> json) {
-    return ChatModel(
+  factory MessageState.fromJson(Map<String, dynamic> json) {
+    return MessageState(
       senderId: json['senderId'],
       receiverId: json['receiverId'],
       pharmacyName: json['pharmacyName'] ?? '',
