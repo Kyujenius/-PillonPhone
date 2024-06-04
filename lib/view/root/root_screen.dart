@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:pill_on_phone/view/base/base_screen.dart';
-import 'package:pill_on_phone/view/chatting/chatting_list_screen.dart';
+import 'package:pill_on_phone/view/chatting_list/chatting_list_screen.dart';
 import 'package:pill_on_phone/view/pharmacy/pharmacy_screen.dart';
 import 'package:pill_on_phone/view/root/widget/custom_bottom_navigation_bar.dart';
 import 'package:pill_on_phone/view/see_more/see_more_screen.dart';

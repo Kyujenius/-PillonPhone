@@ -1,4 +1,4 @@
-class ChatListItemModel {
+class MessageListState {
   final int id;
   final String pharmacyName;
   final String? pharmacyImage;
@@ -6,7 +6,7 @@ class ChatListItemModel {
   final int messageCount;
   final String lastMessageTime;
 
-  ChatListItemModel({
+  MessageListState({
     required this.id,
     required this.pharmacyName,
     this.pharmacyImage,
@@ -15,7 +15,7 @@ class ChatListItemModel {
     required this.lastMessageTime,
   });
 
-  ChatListItemModel copyWith({
+  MessageListState copyWith({
     int? id,
     String? pharmacyName,
     String? pharmacyImage,
@@ -23,7 +23,7 @@ class ChatListItemModel {
     int? messageCount,
     String? lastMessageTime,
   }) {
-    return ChatListItemModel(
+    return MessageListState(
       id: id ?? this.id,
       pharmacyName: pharmacyName ?? this.pharmacyName,
       pharmacyImage: pharmacyImage ?? this.pharmacyImage,
@@ -33,8 +33,8 @@ class ChatListItemModel {
     );
   }
 
-  factory ChatListItemModel.fromJson(Map<String, dynamic> json) {
-    return ChatListItemModel(
+  factory MessageListState.fromJson(Map<String, dynamic> json) {
+    return MessageListState(
       id: json['id'],
       pharmacyName: json['pharmacyName'],
       pharmacyImage: json['pharmacyImage'],

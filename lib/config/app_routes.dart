@@ -9,4 +9,5 @@ abstract class AppRoutes {
       '/search-health-function-food';
   static const String BUY_RECORD = '/buy-record';
   static const String BUY_RECORD_DETAIL = '/buy-record-detail';
+  static const String CHATTING = '/chatting';
 }
