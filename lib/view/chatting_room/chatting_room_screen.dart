@@ -5,9 +5,8 @@ import 'package:pill_on_phone/config/font_system.dart';
 import 'package:pill_on_phone/view/base/base_screen.dart';
 import 'package:pill_on_phone/view/chatting_room/widget/chatting_room_item_view.dart';
 import 'package:pill_on_phone/view_model/chatting/chatting_view_model.dart';
-import 'package:pill_on_phone/widget/app_bar/chatting_app_bar.dart';
+import 'package:pill_on_phone/widget/app_bar/default_back_appbar.dart';
 import 'package:pill_on_phone/widget/button/custom_icon_button.dart';
-import 'package:pill_on_phone/widget/button/smaill_custom_icon_button.dart';
 
 class ChattingRoomScreen extends BaseScreen<ChattingViewModel> {
   const ChattingRoomScreen({super.key});
@@ -16,11 +15,11 @@ class ChattingRoomScreen extends BaseScreen<ChattingViewModel> {
   PreferredSizeWidget? buildAppBar(BuildContext context) {
     return PreferredSize(
         preferredSize: const Size.fromHeight(60),
-        child: ChattingAppBar(
+        child: DefaultBackAppBar(
           title: '약알 약국',
           backgroundColor: ColorSystem.neutral.shade50,
           actions: [
-            SmallCustomIconButton(
+            CustomIconButton(
               assetPath: "assets/icons/leaving_chatting.svg",
               onPressed: () {
                 // 나가기 동작 구현
